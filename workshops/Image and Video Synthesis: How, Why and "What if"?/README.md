@@ -10,11 +10,13 @@ TL;DR - traversing latent space of gan as an embedding to produce more/less memo
 
 ## [9/10] The Structure and Interpretation of a GAN (David Bau)
 
-SLIDES MISSING
+slides in interpretibility wowkshop
 
 correlation in gans between objects and activations in some neurons (turning on/off some neuron activation we can edit produced images). correlation can be found automaticly
 
 producing a door in a reasonable place works fine, but producing door in the clouds would not work
+
+cheese hypothesis - regularized gans are more representative
 
 - [GAN Dissection](http://gandissect.csail.mit.edu/)
 - [GAN Paint](http://ganpaint.io/)
