@@ -9,7 +9,7 @@ personal notes from iccv2019
 
 ## Semantic segmentation
 
-- [detect unknown objects using optical flow] Towords segmenting everything that moves
+- [detect unknown objects using optical flow] Towards segmenting everything that moves
 
 ## Instance segmentation
 
@@ -41,6 +41,8 @@ personal notes from iccv2019
 
 - [9/10] [Automated Multi-Stage Compression of Neural Networks](http://openaccess.thecvf.com/content_ICCVW_2019/papers/LPCV/Gusak_Automated_Multi-Stage_Compression_of_Neural_Networks_ICCVW_2019_paper.pdf) - tensor decompositions, two repetitive steps:
 compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depend on dataset). [pytorch code](http://openaccess.thecvf.com/content_ICCVW_2019/papers/LPCV/Gusak_Automated_Multi-Stage_Compression_of_Neural_Networks_ICCVW_2019_paper.pdf)
+
+- [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
 ## Other
 
