@@ -2,6 +2,15 @@
 
 [homepage](https://sites.google.com/berkeley.edu/iccv-2019-image-and-video-syn)
 
+## TL;DR
+
+- hierarchical text2image (bbox->mask->image)
+- generate by modifying part of the image
+- landmark autoencoder
+- best-of-many objective for diversity
+- decompose gans according to physics (e.g. background + foreground). in general image = shape + textures + lightning
+- correlation in gans between objects and activations in some neurons (turning on/off some neuron activation we can edit produced images). correlation can be found automaticly
+
 ## [8/10] Generative models as data visualization (Phillip Isola)
 
 slides in this repo
