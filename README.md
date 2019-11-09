@@ -36,7 +36,13 @@ I took a closer look on:
 
 - [9/10][Adversarial training for quality improvement + uncertainty estimation] [I Bet You Are Wrong: Gambling Adversarial Networks for Structured Semantic Segmentation](http://openaccess.thecvf.com/content_ICCVW_2019/html/CVRSUAD/Samson_I_Bet_You_Are_Wrong_Gambling_Adversarial_Networks_for_Structured_ICCVW_2019_paper.html)
 
-- [7/10][Detect unknown objects using optical flow] Towards segmenting everything that moves
+- [8/10] Asymmetric Non-local Neural Networks for Semantic Segmentation (proposed efficient non-local block, seem to improve quality compared to other architectures on the same backbone)
+
+- [8/10] Convex Shape Prior for Multi-object Segmentation Using a Single Level Set Function. (reformulate loss for convex objects -> performance improve)
+
+- [6/10] Dynamic Multi-scale Filters for Semantic Segmentation (very strange and suspicious layer which surprisingly improves accuracy)
+
+- [6/10][Detect unknown objects using optical flow] Towards segmenting everything that moves
 
 ## Instance segmentation
 
@@ -50,9 +56,11 @@ I took a closer look on:
 
 
 
-## Content generation, generative models
+## Content generation, generative models, GANs
 
 - [10/10 BEST PAPER ICCV2019] SinGAN: Learning a Generative Model from a Single Natural Image [video](https://www.youtube.com/watch?v=Xc9Rkbg6IZA). Use generators and discriminators on multiple resolutions and train on single image patches. Multiple applications without additional training including super resolution, image editing, single image animation, paint2image. Code available.
+
+- [6/10] Once a MAN: Towards Multi-target attack via learning multi-target adversarial network once. **TL;DR** Single model to produce adversarial examples towords any class (surprisingly, all the previous works use one model for one class, in this work - one work for all classes)
 
 - Dance Dance Generation: Motion Transfer for Internet Videos
 
@@ -149,5 +157,33 @@ Sportlight speedrun
 - recurrent u-net for resource constrained segmentation
 
 - efficient segmentation: learning downsampling near semantic boundaries
+
+- continual learning by asymmetric loss approximation with single-side overestimation
+
+- the sound of motions
+
+- generative adversarial minority oversampling
+
+- memorizing normality to detect anomaly: memory-augmented deep autoencoder for unsupervised anomaly detection
+
+- sc-fegan: face editing generative adversarial network with user's sketch and color
+
+- adaptive inference cost with convolutional neural mixture models
+
+- fooling network interpretation in image classification
+
+- recursive visual sound separation using minus-plus net
+
+- LIP: Local Importance-based Pooling
+
+- Global Feature Guided Local Pooling
+
+- Local Relation Networks for Image Recognition
+
+- AttentionRNN: Structured Spatial Attention Mechanism
+
+- Be Your Own Teacher: Improve the performance of CNN via Self-distillation
+
+- ??? ... Shot Neural Architecture Search via Self-Evaluated Template Network
 
 
