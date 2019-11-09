@@ -1,6 +1,30 @@
 # iccv2019-notes
 personal notes from iccv2019
 
+## Intro
+
+Over 7,500 participants, 4 days of main conference + 60 workshops and 12 tutorials.
+~1200 accepted papers (20% orals) on the main conference alone.
+
+It was absolutely infeasible to track everything so I almost completely skipped the following topics
+- Autonomous driving
+- 3D, Point clouds
+- Video analysis
+
+I spend a few time to:
+- Domain adaptation, Zero-shot, few-shot, unsupervised, self-supervised, semi-supervised. **TL;DR** motivation - to learn as fast as humans with less/no data by few examples. In practice it still works poor enough and can not compare to supervised methods. **At the current stage we can not do this successfully enough, but when we will it will be a giant step forward.**
+- Knowledge distillation, federated learning. **TL;DR** many papers have controversal results - sometimes it works, sometimes don't, sometimes very useful, sometimes useless. **You can try but do not expect much**
+- Deepfakes in images and videos. **TL;DR** you can not completely trust any digital image/video anymore. There are huge movement in the area and already several datasets present. The problem is - when you know the "deepfake attack" method and trained on on the data which was produced with this method you can take ~70-95% accuracy (which is itself not much), but *when you don't know the method your deepfake detector may be close to random (50%)*
+
+I took a closer look on:
+- Semantic and instance segmentation, object detection
+- New architectures, modules, losses, augmentations, optimizetion methods
+- Neural architecture search
+- Interpretibility
+- Text detection and recognition
+- Network compression
+- GANs, style transfer
+
 ## Augmentation
 
 - Are adversarial robustness and common perturbation robustness independant attibutes
