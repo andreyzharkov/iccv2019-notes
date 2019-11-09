@@ -10,6 +10,7 @@ It was absolutely infeasible to track everything so I almost completely skipped 
 - Autonomous driving
 - 3D, Point clouds
 - Video analysis
+- Computer Vision in medical images
 
 I spend a few time to:
 - Domain adaptation, Zero-shot, few-shot, unsupervised, self-supervised, semi-supervised. **TL;DR** motivation - to learn as fast as humans with less/no data by few examples. In practice it still works poor enough and can not compare to supervised methods. **At the current stage we can not do this successfully enough, but when we will it will be a giant step forward.**
@@ -27,19 +28,19 @@ I took a closer look on:
 
 ## Augmentation
 
-- Are adversarial robustness and common perturbation robustness independant attibutes
+- [7/10]["We show that increasing the robustness to carefully selected common perturbations, can make neural networks more robust to unseen common perturbations. We also prove that adversarial robustness and robustness to common perturbations are independent. Our results make us believe that neural network robustness should be addressed in a broader sense."] Are adversarial robustness and common perturbation robustness independant attibutes
 
 - 
 
 ## Semantic segmentation
 
-- [detect unknown objects using optical flow] Towards segmenting everything that moves
+- [9/10][Adversarial training for quality improvement + uncertainty estimation] [I Bet You Are Wrong: Gambling Adversarial Networks for Structured Semantic Segmentation](http://openaccess.thecvf.com/content_ICCVW_2019/html/CVRSUAD/Samson_I_Bet_You_Are_Wrong_Gambling_Adversarial_Networks_for_Structured_ICCVW_2019_paper.html)
+
+- [7/10][Detect unknown objects using optical flow] Towards segmenting everything that moves
 
 ## Instance segmentation
 
 ## Object detection
-
-- [Yolo prunning] SlimYOLOv3: narrower faster and better for real-time
 
 ## Text detection and recognition
 
@@ -51,7 +52,7 @@ I took a closer look on:
 
 ## Content generation, generative models
 
-- 
+- [10/10 BEST PAPER ICCV2019] SinGAN: Learning a Generative Model from a Single Natural Image [video](https://www.youtube.com/watch?v=Xc9Rkbg6IZA). Use generators and discriminators on multiple resolutions and train on single image patches. Multiple applications without additional training including super resolution, image editing, single image animation, paint2image. Code available.
 
 - Dance Dance Generation: Motion Transfer for Internet Videos
 
@@ -65,6 +66,8 @@ I took a closer look on:
 
 - [9/10] [Automated Multi-Stage Compression of Neural Networks](http://openaccess.thecvf.com/content_ICCVW_2019/papers/LPCV/Gusak_Automated_Multi-Stage_Compression_of_Neural_Networks_ICCVW_2019_paper.pdf) - tensor decompositions, two repetitive steps:
 compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depend on dataset). [pytorch code](http://openaccess.thecvf.com/content_ICCVW_2019/papers/LPCV/Gusak_Automated_Multi-Stage_Compression_of_Neural_Networks_ICCVW_2019_paper.pdf)
+
+- [6/10][Yolo compression success story, known techniques applied properly] SlimYOLOv3: narrower faster and better for real-time
 
 - [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
@@ -126,3 +129,25 @@ Sportlight speedrun
 
 -decompose gans according to physics (e.g. background + foreground). in general image = shape + textures + lightning
 -correlation in gans between objects and activations in some neurons (turning on/off some neuron activation we can edit produced images). correlation can be found automaticly, David Bau
+
+## TODO
+
+- FW-GAN (Flow navigated warping gan for video virtual try-on)
+
+- Learning lightweighted LANE CNNs by self-attention distilation
+
+- Incremental class discovery for semantic segmentation with RGBD...
+
+- Lifelong GAN: Continual learning for Conditional Image Generation
+
+- Image generation from small datasets via Batch Statistic Adaptation
+
+- (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
+
+- detecting the unexpected by image resynthesis (anomaly detection)
+
+- recurrent u-net for resource constrained segmentation
+
+- efficient segmentation: learning downsampling near semantic boundaries
+
+
