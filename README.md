@@ -46,7 +46,11 @@ I took a closer look on:
 
 ## Instance segmentation
 
+- [9/10] YOLACT Real-time Instance Segmentation (learn prototypes and coefficients to combine them; looked like a magic for me even after I read the paper, but very interesting)
+
 ## Object detection
+
+- [7/10] FCOS: Fully Convolutional One-Stage Object Detection (directly predict 4D distances to object (top, left, bottom, right) in each foregroung pixel + NMS -> SOTA + speed)
 
 ## Text detection and recognition
 
@@ -56,19 +60,19 @@ I took a closer look on:
 
 
 
-## Content generation, generative models, GANs
+## Content generation, generative models, GANs, style transfer
 
 - [10/10 BEST PAPER ICCV2019] SinGAN: Learning a Generative Model from a Single Natural Image [video](https://www.youtube.com/watch?v=Xc9Rkbg6IZA). Use generators and discriminators on multiple resolutions and train on single image patches. Multiple applications without additional training including super resolution, image editing, single image animation, paint2image. Code available.
 
 - [6/10] Once a MAN: Towards Multi-target attack via learning multi-target adversarial network once. **TL;DR** Single model to produce adversarial examples towords any class (surprisingly, all the previous works use one model for one class, in this work - one work for all classes)
 
-- Dance Dance Generation: Motion Transfer for Internet Videos
+- [8/10] FUNIT: Few-shot Unsupervised Image-to-Image translation
 
-- I bet you are wrong: gambling adversarial networks for semantic segmentation
+- Dance Dance Generation: Motion Transfer for Internet Videos
 
 - Markov decision process for video generation
 
--
+- Class-Based Styling: Real-time Localized Style Transfer with Semantic Segmentation. (Style transfer on entire image + semantic segmentation masks = style transfer for selected object classes)
 
 ## Compression
 
@@ -186,4 +190,16 @@ Sportlight speedrun
 
 - ??? ... Shot Neural Architecture Search via Self-Evaluated Template Network
 
+- Boundless: Generative Adversarial Network for Image Extension
 
+- Very Long Natural Scenary Image Prediction by Outpaining
+
+- Joint Acne Image Grading and Counting via Label Distribution Learning
+
+- Improving CNN Classifiers by Estimating Test-time Priors
+
+Other notes:
+
+- Book "Explainable AI: Interpreting, explaining and visualizing deep learning"
+
+- Are dilated convolutions used in sequential modeling? cnns in general?
