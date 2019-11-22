@@ -42,6 +42,10 @@ I took a closer look on:
 
 - [9/10][Suspicious layer which surprisingly improves both accuracy and speed and is a drop-in replacement for vanilla convolution] [Dynamic Multi-scale Filters for Semantic Segmentation](http://openaccess.thecvf.com/content_ICCV_2019/papers/He_Dynamic_Multi-Scale_Filters_for_Semantic_Segmentation_ICCV_2019_paper.pdf) Replace vanilla conv with the following 2-branch structure: the first branch computes KxK kernel via adaptive_pool(KxK) -> conv1x1; the second branch applies 1x1 conv to features; then 2 branches merge via depthwise conv **with kernel computed from the first branch** and after that additional 1x1 conv. Ablation study shows that it can give +7% mIoU compared to vanilla conv. Now why it's suspicious? The computed kernel's top left element is essentially taken from image top left part, and the same for bottom right kernel element (it's essentially image bottom right part). And this **very different** elements are applied to very similar local features. My intuition fails to explain why it make sense, maybe we have to add additional global pooling for the kernel and firstly convolve kernel with it.
 
+- [5/10][Typically works better and established SOTA, but obviously slower, nothing surprising] [Recurrent u-net for resource constrained segmentation](https://arxiv.org/pdf/1906.04913.pdf). Recurrence in several layers close to lowest-resolution ones.
+
+- [8/10][Non-uniform downsampling of high-resolution images] [Efficient segmentation: learning downsampling near semantic boundaries](https://arxiv.org/pdf/1907.07156.pdf). Network for creation of non-uniform downsampling grid aimed to increase space for semantic boundaries. The results are reasonably better than uniform downsampling. 3-steps: 1)non-uniform downsampling (image is downsampled to *very small* resulution (32x32 or 64x64 for example), on this resolution downsampling network is trained, ground truth are derived from a reasonable optimization problem on ground truth segmentation map) == very fast stage 2)main segmentation network runs on non-uniform downsampled image 3)the result is upsampled (which can be done as we know downsampling strategy)
+
 - [6/10][Detect unknown objects using optical flow] [Towards segmenting everything that moves](https://arxiv.org/abs/1902.03715)
 
 ## Instance segmentation
@@ -148,8 +152,6 @@ Sportlight speedrun
 
 - Learning lightweighted LANE CNNs by self-attention distilation
 
-- Incremental class discovery for semantic segmentation with RGBD...
-
 - Lifelong GAN: Continual learning for Conditional Image Generation
 
 - Image generation from small datasets via Batch Statistic Adaptation
@@ -157,10 +159,6 @@ Sportlight speedrun
 - (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
 
 - detecting the unexpected by image resynthesis (anomaly detection)
-
-- recurrent u-net for resource constrained segmentation
-
-- efficient segmentation: learning downsampling near semantic boundaries
 
 - continual learning by asymmetric loss approximation with single-side overestimation
 
