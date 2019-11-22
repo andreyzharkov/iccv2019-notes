@@ -46,11 +46,11 @@ I took a closer look on:
 
 ## Instance segmentation
 
-- [9/10] YOLACT Real-time Instance Segmentation (learn prototypes and coefficients to combine them; looked like a magic for me even after I read the paper, but very interesting)
+- [9/10][Learn prototypes and coefficients to combine them; can be 3-10x faster than MaskRCNN and have comparable accuracy] [YOLACT Real-time Instance Segmentation](https://arxiv.org/pdf/1904.02689.pdf) Each anchor predicts bbox + classes + **prototypes weights**. The separate branch predicts prototypes.
 
 ## Object detection
 
-- [7/10] FCOS: Fully Convolutional One-Stage Object Detection (directly predict 4D distances to object (top, left, bottom, right) in each foregroung pixel + NMS -> SOTA + speed)
+- [7/10][Dense object detection by simply predicting bbox coordinates. Simple and efficient.] [FCOS: Fully Convolutional One-Stage Object Detection](https://arxiv.org/pdf/1904.01355.pdf) Directly predict 4D distances to object (top, left, bottom, right) in each foregroung pixel + NMS -> SOTA + simplisity + integration with depth prediction + no anchors computation (i.e. IoU) and anchor hyperparameters. Details: 1)each object is predicted on only one feature map (on training) and on testing in case of multiple resolutions alarmed for an object only the smallest is chosen; 2)propose "centerness" branch which predicts normalized ([0, 1]) distance between pixel and center, this branch is used in NMS multiplied by classification.
 
 ## Text detection and recognition
 
