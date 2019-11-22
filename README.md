@@ -77,15 +77,15 @@ I took a closer look on:
 
 - [9/10][Learn prototypes and coefficients to combine them; can be 3-10x faster than MaskRCNN and have comparable accuracy] [YOLACT Real-time Instance Segmentation](https://arxiv.org/pdf/1904.02689.pdf) Each anchor predicts bbox + classes + **prototypes weights**. The separate branch predicts prototypes.
 
-- AdaptIS: Adaptive Instance Selection Network
+- [9/10][Backbone + point proposal -> mask of the object with point] [AdaptIS: Adaptive Instance Selection Network](https://arxiv.org/pdf/1909.07829.pdf) Proposed network is capable of generating instance mask by specifying point on that instance. Backbone extracts features. Features + point -> small net with AdaIN (where norms are computed from point info) -> instance mask. To get all objects on the image authors trained separate "point proposal" branch which is trained after everything else is frozen and predicts binary label "will point be good for object mask prediction?". From this branch top k% points are sampled and used for predicting objects.
 
 ## Object detection
 
 - [7/10][Dense object detection by simply predicting bbox coordinates. Simple and efficient.] [FCOS: Fully Convolutional One-Stage Object Detection](https://arxiv.org/pdf/1904.01355.pdf) Directly predict 4D distances to object (top, left, bottom, right) in each foregroung pixel + NMS -> SOTA + simplisity + integration with depth prediction + no anchors computation (i.e. IoU) and anchor hyperparameters. Details: 1)each object is predicted on only one feature map (on training) and on testing in case of multiple resolutions alarmed for an object only the smallest is chosen; 2)propose "centerness" branch which predicts normalized ([0, 1]) distance between pixel and center, this branch is used in NMS multiplied by classification.
 
-- POD: Practical object detection with scale-sensitive network
+- [6/10] [Global scale predicted in each resnet block, dilations are selected based on that] [POD: Practical object detection with scale-sensitive network](https://arxiv.org/pdf/1909.02225.pdf)
 
-- RepPoints: Point set Representation for object detection
+- [7/10] [Change of target - ~~bbox~~ reppoints - arbitrary points whose circumference locates object accurately] [RepPoints: Point set Representation for object detection](http://openaccess.thecvf.com/content_ICCV_2019/papers/Yang_RepPoints_Point_Set_Representation_for_Object_Detection_ICCV_2019_paper.pdf) These reppoint may be iteratively refined in prediction, they are learn by localization and classification losses.
 
 - Generative Modelling for small data object detection
 
