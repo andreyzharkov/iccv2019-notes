@@ -11,6 +11,7 @@ It was absolutely infeasible to track everything so I almost completely skipped 
 - 3D, Point clouds
 - Video analysis
 - Computer Vision in medical images
+- Captioning, Visual Grounding, Visual Question Answering
 
 I spend a few time to:
 - Domain adaptation, Zero-shot, few-shot, unsupervised, self-supervised, semi-supervised. **TL;DR** motivation - to learn as fast as humans with less/no data by few examples. In practice it still works poor enough and can not compare to supervised methods. **At the current stage we can not do this successfully enough, but when we will it will be a giant step forward.**
@@ -62,6 +63,21 @@ I took a closer look on:
 
 - State-of-the-art in action: unconstrained text detection
 
+- Convolutional character networks
+
+- Large-scale Tag-based Font retrieval with Generative Feature Learning
+
+- Chinese Street View Text: Large-scale Chinese Reading and partially supervised learning
+
+- TextDragon: An End-to-End Framework for Arbitraty Shaped Text Spotting
+
+- Efficient and accurate Arbitrary-Shaped Text Detection with Pixel Aggregation Network
+
+- What's wrong with Scene Text Recognition Model Comparations? Dataset and Model analysys
+
+- Towards unconstrained text spotting
+
+- Controllable artistic text style transfer via shape-matching GAN
 
 
 ## Content generation, generative models, GANs, style transfer
@@ -150,7 +166,7 @@ Sportlight speedrun
 
 - FW-GAN (Flow navigated warping gan for video virtual try-on)
 
-- Learning lightweighted LANE CNNs by self-attention distilation
+- Learning lightweighted LANE Detection CNNs by self-attention distilation
 
 - Lifelong GAN: Continual learning for Conditional Image Generation
 
@@ -159,6 +175,10 @@ Sportlight speedrun
 - (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
 
 - detecting the unexpected by image resynthesis (anomaly detection)
+
+- randomly wired nets
+
+- S4L
 
 - continual learning by asymmetric loss approximation with single-side overestimation
 
@@ -188,6 +208,124 @@ Sportlight speedrun
 
 - ??? ... Shot Neural Architecture Search via Self-Evaluated Template Network
 
+- [ransac-like to fit arbitraty figures] Progressive-X: Efficient, Anytime, Multi-Model Fitting Algorithm
+
+- Selectivity or Invariance: Boundary aware Salient Object Detection
+
+- CARAFE: Content-Aware ReAssembly of FEatures
+
+- Noise flow: noise modeling with conditional normalizing flows
+
+- Seeing Motion in the dark
+
+- AutoGAN: Neural architecture search for generative adversarial networks
+
+- Accelerate CNN via Recursive Bayesian Pruning
+
+- Understanding whitening and coloring transform for universal style transfer
+
+- Wassershtein GAN with quadratic transport cost
+
+- Rethinging Imagenet Pre-training
+
+- DSConv: Efficient Convolutional Operator
+
+- Deep Self-learning From Noisy Labels
+
+- Gated-SCNN: Gated Shape CNN for Semantic Segmentation
+
+- A closed-form solution to universal style transfer
+
+- Everybody Dance Now (University of California)
+
+- Seeing what a GAN cannot generate
+
+- InGAN: Capturing and Retargeting the "DNA" of a Natural Image
+
+- On the Efficacy of Knowledge Distillation
+
+- Spectral regularization for combating mode collapse in GANs
+
+- Scaling and benchmarking self-supervised visual representation learning
+
+- SoftTripletLoss: Deep metric learning without triplet sampling
+
+- Gaussian margin for max-margin class imbalanced learning
+
+- Online Hyper-parameter Learning for Auto-Augmentation Strategy
+
+- Selective Sparse Sampling for Fine-Grained Image Recognition
+
+- Dynamic anchor feature selection for single shot object detection
+
+- ThunderNet: Towords real time generic object detection on mobile device
+
+- ACFNet: Attentional class feature network for semantic segmentation
+
+- Adaptive Context Network for Scene Parsing
+
+- Boundary-aware Feature Propagation for Scene Segmentation
+
+- Learning to see moving objects in the dark
+
+- Stacked Cross Refined Network for Edge-aware Salient Object Detection
+
+- AdaptIS: Adaptive Instance Selection Network
+
+- VideoBERT: A Joint model for Video and Language Representation Learning
+
+- CutMix: Regularizing Strategy to Train Strong Classifiers with Localizable Features
+
+- PR Product: A substitute for inner product in neural networks
+
+- Anchor Loss: Modulating Loss Scale Based on Prediction
+
+- Explaining Neural Networks Semantically and Qualitatively
+
+- PuppetGAN: Cross-domain Image Manipulation by Demonstration
+
+- S2GAN: Sharing Aging Factors Across Ages and Sharing Aging Trends Among Individuals
+
+- Deep Meta Metric Learning
+
+- Generative Modelling for small data object detection
+
+- Scale-aware Trident Network for Object Detection
+
+- Slow-Fast Networks for Video Recognition
+
+- Transductive Learning for Zero-shot Object Detection
+
+- Deep Comprehensive Maining for Image Clustering
+
+- GAN-Tree: An incrimentally Learned Hierarchical Generative Framework for Multi-Modal Data Distributions
+
+- Self-training with progressive augmentation for Unsupervised Person Re-identification
+
+- AM-LFS: AutoML for Loss Function Search
+
+- Learning to paint with model-based deep reinforcement learning
+
+- EGNet: Edge Guidance Network for Salient Object Detection
+
+- Joint Demosaicing and Denoising by Fine-tuning of Bursts of Raw Images
+
+- Photorealistic style transfer via Wavelet Transforms
+
+- Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss
+
+- Personalized Fashion Design (Cong Yu et al)
+
+- Human unsertainty makes classification more robust
+
+- POD: Practical object detection with scale-sensitive network
+
+- RepPoints: Point set Representation for object detection
+
+- Subspace structure-aware spectral clustering for robust subspace clustering
+
+- Invariant information clustering for unsupervised image classification and segmentation
+
 - Boundless: Generative Adversarial Network for Image Extension
 
 - Very Long Natural Scenary Image Prediction by Outpaining
@@ -195,6 +333,8 @@ Sportlight speedrun
 - Joint Acne Image Grading and Counting via Label Distribution Learning
 
 - Improving CNN Classifiers by Estimating Test-time Priors
+
+- [5/10] [Compute masks with semantic segmentations, do style transfer for the whole image, and finally R=(1-mask)I+mask*I_transferred] [Class-based styling: real-time localized style transfer with semantic segmentation](https://arxiv.org/abs/1908.11525)
 
 Other notes:
 
