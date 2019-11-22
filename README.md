@@ -33,6 +33,12 @@ I took a closer look on:
 
 - 
 
+
+## Modules
+
+
+- [8/10][Fast and efficient feature upsampling with very little overhead] [CARAFE: Content-Aware ReAssembly of FEatures](https://arxiv.org/abs/1905.02188)
+
 ## Semantic segmentation
 
 - [9/10][Instead of using **global** discriminator between ground truth and predicted segmentation map they use "gambler" which predicts from (image, predicted segmap) to CE-weights to maximize sum(weights * CELoss)] [I Bet You Are Wrong: Gambling Adversarial Networks for Structured Semantic Segmentation](http://openaccess.thecvf.com/content_ICCVW_2019/html/CVRSUAD/Samson_I_Bet_You_Are_Wrong_Gambling_Adversarial_Networks_for_Structured_ICCVW_2019_paper.html) Instead of using **global** discriminator between ground truth and predicted segmentation map they use "gambler" which predicts from (image, predicted segmap) to CE-weights to maximize sum(weights * CELoss). Seem to improve perfornamce a lot compared to previous adversarial training approaches. Additional benefit is that gambler does not see GT so it is less sensitive to errors in GT
@@ -48,6 +54,16 @@ I took a closer look on:
 - [8/10][Non-uniform downsampling of high-resolution images] [Efficient segmentation: learning downsampling near semantic boundaries](https://arxiv.org/pdf/1907.07156.pdf). Network for creation of non-uniform downsampling grid aimed to increase space for semantic boundaries. The results are reasonably better than uniform downsampling. 3-steps: 1)non-uniform downsampling (image is downsampled to *very small* resulution (32x32 or 64x64 for example), on this resolution downsampling network is trained, ground truth are derived from a reasonable optimization problem on ground truth segmentation map) == very fast stage 2)main segmentation network runs on non-uniform downsampled image 3)the result is upsampled (which can be done as we know downsampling strategy)
 
 - [6/10][Detect unknown objects using optical flow] [Towards segmenting everything that moves](https://arxiv.org/abs/1902.03715)
+
+### Make use of boundaries
+
+- [8/10][Separate (chip) shape stream from image gradients and dual-task learning (shape + segmentation)] [Gated-SCNN: Gated Shape CNN for Semantic Segmentation](https://arxiv.org/pdf/1907.05740.pdf). 1)very cheap 3-layer shape stream which accepts image gradients + 1st layer CNN features and exchanges information with the main backbone via gating mechanism 2)dual loss (edge detection + semantic segmentation) + consensus regularization penalty (checks that semantic segmentation output is consistant with predicted edges)
+
+- [8/10][Another approach for using boundary: first, learn boundary as N+1' class then introduce UAGs and some crazy staff] [Boundary-Aware Feature Propagation for Scene Segmentation](https://arxiv.org/pdf/1909.00179.pdf)
+
+- [8/10][Per class centers computation + attention on them] [ACFNet: Attentional clas feature network for semantic segmentation](https://arxiv.org/pdf/1909.09408.pdf)
+
+- [9/10][SOTA on cityscapes-val, proposed global-local context module to aggregate multidimensional features] [Adaptive Context Network for Scene Parsing](https://arxiv.org/pdf/1911.01664.pdf)
 
 ## Instance segmentation
 
@@ -92,7 +108,7 @@ I took a closer look on:
 
 - Markov decision process for video generation
 
-- Class-Based Styling: Real-time Localized Style Transfer with Semantic Segmentation. (Style transfer on entire image + semantic segmentation masks = style transfer for selected object classes)
+- [5/10] [Style transfer on entire image + semantic segmentation masks = style transfer for selected object classes] [Class-based styling: real-time localized style transfer with semantic segmentation](https://arxiv.org/abs/1908.11525)
 
 ## Compression
 
@@ -103,11 +119,13 @@ compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depe
 
 - [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
-## Other
+## Anomaly detection
 
 - Real time aerial suspicious analysis (asana): system for identification and re-identification of suspicious individuals in crowds using the bayesian scatter-net hybrid network
 
-- 
+- Detecting the unexpected by image resynthesis (anomaly detection)
+
+- memorizing normality to detect anomaly: memory-augmented deep autoencoder for unsupervised anomaly detection
 
 # Workshops
 ## Workshop: Image and Video Synthesis: How, Why and What If?
@@ -166,15 +184,13 @@ Sportlight speedrun
 
 - FW-GAN (Flow navigated warping gan for video virtual try-on)
 
-- Learning lightweighted LANE Detection CNNs by self-attention distilation
+- ~~Learning lightweighted LANE Detection CNNs by self-attention distilation~~
 
 - Lifelong GAN: Continual learning for Conditional Image Generation
 
 - Image generation from small datasets via Batch Statistic Adaptation
 
 - (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
-
-- detecting the unexpected by image resynthesis (anomaly detection)
 
 - randomly wired nets
 
@@ -185,8 +201,6 @@ Sportlight speedrun
 - the sound of motions
 
 - generative adversarial minority oversampling
-
-- memorizing normality to detect anomaly: memory-augmented deep autoencoder for unsupervised anomaly detection
 
 - sc-fegan: face editing generative adversarial network with user's sketch and color
 
@@ -212,8 +226,6 @@ Sportlight speedrun
 
 - Selectivity or Invariance: Boundary aware Salient Object Detection
 
-- CARAFE: Content-Aware ReAssembly of FEatures
-
 - Noise flow: noise modeling with conditional normalizing flows
 
 - Seeing Motion in the dark
@@ -231,8 +243,6 @@ Sportlight speedrun
 - DSConv: Efficient Convolutional Operator
 
 - Deep Self-learning From Noisy Labels
-
-- Gated-SCNN: Gated Shape CNN for Semantic Segmentation
 
 - A closed-form solution to universal style transfer
 
@@ -258,13 +268,9 @@ Sportlight speedrun
 
 - Dynamic anchor feature selection for single shot object detection
 
-- ThunderNet: Towords real time generic object detection on mobile device
+- ThunderNet: Towards real time generic object detection on mobile device
 
-- ACFNet: Attentional class feature network for semantic segmentation
-
-- Adaptive Context Network for Scene Parsing
-
-- Boundary-aware Feature Propagation for Scene Segmentation
+-
 
 - Learning to see moving objects in the dark
 
@@ -333,8 +339,6 @@ Sportlight speedrun
 - Joint Acne Image Grading and Counting via Label Distribution Learning
 
 - Improving CNN Classifiers by Estimating Test-time Priors
-
-- [5/10] [Compute masks with semantic segmentations, do style transfer for the whole image, and finally R=(1-mask)I+mask*I_transferred] [Class-based styling: real-time localized style transfer with semantic segmentation](https://arxiv.org/abs/1908.11525)
 
 Other notes:
 
