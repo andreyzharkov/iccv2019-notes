@@ -40,7 +40,7 @@ I took a closer look on:
 
 - [???][Reformulate loss for convex objects; *I didn't understand that; looks like computational geometry thing can't say how useful it is with NNs*] [Convex Shape Prior for Multi-object Segmentation Using a Single Level Set Function](http://openaccess.thecvf.com/content_ICCV_2019/papers/Luo_Convex_Shape_Prior_for_Multi-Object_Segmentation_Using_a_Single_Level_ICCV_2019_paper.pdf)
 
-- [6/10] Dynamic Multi-scale Filters for Semantic Segmentation (very strange and suspicious layer which surprisingly improves accuracy)
+- [9/10] [Suspicious layer which surprisingly improves both accuracy and speed and is a drop-in replacement for vanilla convolution] [Dynamic Multi-scale Filters for Semantic Segmentation](http://openaccess.thecvf.com/content_ICCV_2019/papers/He_Dynamic_Multi-Scale_Filters_for_Semantic_Segmentation_ICCV_2019_paper.pdf) Replace vanilla conv with the following 2-branch structure: the first branch computes KxK kernel via adaptive_pool(KxK) -> conv1x1; the second branch applies 1x1 conv to features; then 2 branches merge via depthwise conv **with kernel computed from the first branch** and after that additional 1x1 conv. Ablation study shows that it can give +7% mIoU compared to vanilla conv. Now why it's suspicious? The computed kernel's top left element is essentially taken from image top left part, and the same for bottom right kernel element (it's essentially image bottom right part). And this **very different** elements are applied to very similar local features. My intuition fails to explain why it make sense, maybe we have to add additional global pooling for the kernel and firstly convolve kernel with it.
 
 - [6/10][Detect unknown objects using optical flow] Towards segmenting everything that moves
 
