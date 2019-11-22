@@ -31,8 +31,9 @@ I took a closer look on:
 
 - [7/10][They are independant] [Are adversarial robustness and common perturbation robustness independant attibutes](https://arxiv.org/abs/1909.02436)
 
-- 
+- CutMix: Regularizing Strategy to Train Strong Classifiers with Localizable Features
 
+- Online Hyper-parameter Learning for Auto-Augmentation Strategy
 
 ## Modules
 
@@ -76,9 +77,23 @@ I took a closer look on:
 
 - [9/10][Learn prototypes and coefficients to combine them; can be 3-10x faster than MaskRCNN and have comparable accuracy] [YOLACT Real-time Instance Segmentation](https://arxiv.org/pdf/1904.02689.pdf) Each anchor predicts bbox + classes + **prototypes weights**. The separate branch predicts prototypes.
 
+- AdaptIS: Adaptive Instance Selection Network
+
 ## Object detection
 
 - [7/10][Dense object detection by simply predicting bbox coordinates. Simple and efficient.] [FCOS: Fully Convolutional One-Stage Object Detection](https://arxiv.org/pdf/1904.01355.pdf) Directly predict 4D distances to object (top, left, bottom, right) in each foregroung pixel + NMS -> SOTA + simplisity + integration with depth prediction + no anchors computation (i.e. IoU) and anchor hyperparameters. Details: 1)each object is predicted on only one feature map (on training) and on testing in case of multiple resolutions alarmed for an object only the smallest is chosen; 2)propose "centerness" branch which predicts normalized ([0, 1]) distance between pixel and center, this branch is used in NMS multiplied by classification.
+
+- POD: Practical object detection with scale-sensitive network
+
+- RepPoints: Point set Representation for object detection
+
+- Generative Modelling for small data object detection
+
+- Scale-aware Trident Network for Object Detection
+
+- Stacked Cross Refined Network for Edge-aware Salient Object Detection
+
+- ThunderNet: Towards real time generic object detection on mobile device
 
 ## Text detection and recognition
 
@@ -123,6 +138,8 @@ I took a closer look on:
 compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depend on dataset). [pytorch code](http://openaccess.thecvf.com/content_ICCVW_2019/papers/LPCV/Gusak_Automated_Multi-Stage_Compression_of_Neural_Networks_ICCVW_2019_paper.pdf)
 
 - [6/10][Yolo compression success story, known techniques applied properly] SlimYOLOv3: narrower faster and better for real-time
+
+- Accelerate CNN via Recursive Bayesian Pruning
 
 - [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
@@ -197,8 +214,6 @@ Sportlight speedrun
 
 - Image generation from small datasets via Batch Statistic Adaptation
 
-- (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
-
 - randomly wired nets
 
 - S4L
@@ -213,8 +228,6 @@ Sportlight speedrun
 
 - adaptive inference cost with convolutional neural mixture models
 
-- fooling network interpretation in image classification
-
 - recursive visual sound separation using minus-plus net
 
 - LIP: Local Importance-based Pooling
@@ -227,23 +240,21 @@ Sportlight speedrun
 
 - Be Your Own Teacher: Improve the performance of CNN via Self-distillation
 
-- ??? ... Shot Neural Architecture Search via Self-Evaluated Template Network
+
 
 - [ransac-like to fit arbitraty figures] Progressive-X: Efficient, Anytime, Multi-Model Fitting Algorithm
-
-- Selectivity or Invariance: Boundary aware Salient Object Detection
 
 - Noise flow: noise modeling with conditional normalizing flows
 
 - Seeing Motion in the dark
 
-- AutoGAN: Neural architecture search for generative adversarial networks
 
-- Accelerate CNN via Recursive Bayesian Pruning
 
 - Understanding whitening and coloring transform for universal style transfer
 
 - Wassershtein GAN with quadratic transport cost
+- InGAN: Capturing and Retargeting the "DNA" of a Natural Image
+- Spectral regularization for combating mode collapse in GANs
 
 - Rethinging Imagenet Pre-training
 
@@ -251,49 +262,43 @@ Sportlight speedrun
 
 - Deep Self-learning From Noisy Labels
 
-- A closed-form solution to universal style transfer
-
 - Everybody Dance Now (University of California)
 
 - Seeing what a GAN cannot generate
 
-- InGAN: Capturing and Retargeting the "DNA" of a Natural Image
-
 - On the Efficacy of Knowledge Distillation
-
-- Spectral regularization for combating mode collapse in GANs
 
 - Scaling and benchmarking self-supervised visual representation learning
 
-- SoftTripletLoss: Deep metric learning without triplet sampling
-
 - Gaussian margin for max-margin class imbalanced learning
-
-- Online Hyper-parameter Learning for Auto-Augmentation Strategy
 
 - Selective Sparse Sampling for Fine-Grained Image Recognition
 
-- Dynamic anchor feature selection for single shot object detection
+- ~~Dynamic anchor feature selection for single shot object detection~~
 
-- ThunderNet: Towards real time generic object detection on mobile device
 
--
 
 - Learning to see moving objects in the dark
 
-- Stacked Cross Refined Network for Edge-aware Salient Object Detection
 
-- AdaptIS: Adaptive Instance Selection Network
 
 - VideoBERT: A Joint model for Video and Language Representation Learning
 
-- CutMix: Regularizing Strategy to Train Strong Classifiers with Localizable Features
-
 - PR Product: A substitute for inner product in neural networks
+
+### Losses
 
 - Anchor Loss: Modulating Loss Scale Based on Prediction
 
+- SoftTripletLoss: Deep metric learning without triplet sampling
+
+### Interpretability
+
 - Explaining Neural Networks Semantically and Qualitatively
+
+- fooling network interpretation in image classification
+
+
 
 - PuppetGAN: Cross-domain Image Manipulation by Demonstration
 
@@ -301,53 +306,73 @@ Sportlight speedrun
 
 - Deep Meta Metric Learning
 
-- Generative Modelling for small data object detection
-
-- Scale-aware Trident Network for Object Detection
-
-- Slow-Fast Networks for Video Recognition
+- [slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
 
 - Transductive Learning for Zero-shot Object Detection
 
-- Deep Comprehensive Maining for Image Clustering
 
-- GAN-Tree: An incrimentally Learned Hierarchical Generative Framework for Multi-Modal Data Distributions
 
 - Self-training with progressive augmentation for Unsupervised Person Re-identification
 
-- AM-LFS: AutoML for Loss Function Search
-
 - Learning to paint with model-based deep reinforcement learning
-
-- EGNet: Edge Guidance Network for Salient Object Detection
 
 - Joint Demosaicing and Denoising by Fine-tuning of Bursts of Raw Images
 
+- Improving CNN Classifiers by Estimating Test-time Priors
+
+## Neural Architecture Search
+
+- AM-LFS: AutoML for Loss Function Search
+
+- AutoGAN: Neural architecture search for generative adversarial networks
+
+- One-Shot Neural Architecture Search via Self-Evaluated Template Network
+
+### Salient object detection
+
+- EGNet: Edge Guidance Network for Salient Object Detection
+
+- Selectivity or Invariance: Boundary aware Salient Object Detection
+
+### Style transfer
+
 - Photorealistic style transfer via Wavelet Transforms
 
-- Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss
+- A closed-form solution to universal style transfer
+
+### Fashion, clothes try-on
 
 - Personalized Fashion Design (Cong Yu et al)
 
-- Human unsertainty makes classification more robust
-
-- POD: Practical object detection with scale-sensitive network
-
-- RepPoints: Point set Representation for object detection
+### Clustering
 
 - Subspace structure-aware spectral clustering for robust subspace clustering
 
 - Invariant information clustering for unsupervised image classification and segmentation
 
+- GAN-Tree: An incrimentally Learned Hierarchical Generative Framework for Multi-Modal Data Distributions
+
+- Deep Comprehensive Maining for Image Clustering
+
+### Image extension (GANs)
+
 - Boundless: Generative Adversarial Network for Image Extension
 
 - Very Long Natural Scenary Image Prediction by Outpaining
 
+### Human unsertainty for training
+
+- Human unsertainty makes classification more robust
+
+- (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
+
+### Other (random)
+
 - Joint Acne Image Grading and Counting via Label Distribution Learning
 
-- Improving CNN Classifiers by Estimating Test-time Priors
+- [comic colorization] Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss
 
-Other notes:
+# Other notes:
 
 - Book "Explainable AI: Interpreting, explaining and visualizing deep learning"
 
