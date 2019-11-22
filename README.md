@@ -4,7 +4,7 @@ personal notes from iccv2019
 ## Intro
 
 Over 7,500 participants, 4 days of main conference + 60 workshops and 12 tutorials.
-~1200 accepted papers (20% orals) on the main conference alone.
+1075 accepted papers (10% orals) on the main conference alone.
 
 It was absolutely infeasible to track everything so I almost completely skipped the following topics
 - Autonomous driving
@@ -28,17 +28,17 @@ I took a closer look on:
 
 ## Augmentation
 
-- [7/10]["We show that increasing the robustness to carefully selected common perturbations, can make neural networks more robust to unseen common perturbations. We also prove that adversarial robustness and robustness to common perturbations are independent. Our results make us believe that neural network robustness should be addressed in a broader sense."] Are adversarial robustness and common perturbation robustness independant attibutes
+- [7/10][They are independant] [Are adversarial robustness and common perturbation robustness independant attibutes](https://arxiv.org/abs/1909.02436)
 
 - 
 
 ## Semantic segmentation
 
-- [9/10][Adversarial training for quality improvement + uncertainty estimation] [I Bet You Are Wrong: Gambling Adversarial Networks for Structured Semantic Segmentation](http://openaccess.thecvf.com/content_ICCVW_2019/html/CVRSUAD/Samson_I_Bet_You_Are_Wrong_Gambling_Adversarial_Networks_for_Structured_ICCVW_2019_paper.html)
+- [9/10][Instead of using **global** discriminator between ground truth and predicted segmentation map they use "gambler" which predicts from (image, predicted segmap) to CE-weights to maximize sum(weights * CELoss)] [I Bet You Are Wrong: Gambling Adversarial Networks for Structured Semantic Segmentation](http://openaccess.thecvf.com/content_ICCVW_2019/html/CVRSUAD/Samson_I_Bet_You_Are_Wrong_Gambling_Adversarial_Networks_for_Structured_ICCVW_2019_paper.html) Instead of using **global** discriminator between ground truth and predicted segmentation map they use "gambler" which predicts from (image, predicted segmap) to CE-weights to maximize sum(weights * CELoss). Seem to improve perfornamce a lot compared to previous adversarial training approaches. Additional benefit is that gambler does not see GT so it is less sensitive to errors in GT
 
-- [8/10] Asymmetric Non-local Neural Networks for Semantic Segmentation (proposed efficient non-local block, seem to improve quality compared to other architectures on the same backbone)
+- [6/10][Self-attention on ASPP features flattened + concated] [Asymmetric Non-local Neural Networks for Semantic Segmentation](https://arxiv.org/pdf/1908.07678.pdf) Instead of global self-attention (which is very costly) they 1)use ASPP 2)flatten all ASPP maps 3)concat the resulted 1x1 maps 4)use attention on this concated features (which means that you can select 0.1 * global (1x1) pool + 0.3 * 2x2pool[0,0] + 0.01 * 2x2pool[0,1] + ...). The module improves final metric obviously.
 
-- [8/10] Convex Shape Prior for Multi-object Segmentation Using a Single Level Set Function. (reformulate loss for convex objects -> performance improve)
+- [???][Reformulate loss for convex objects; *I didn't understand that; looks like computational geometry thing can't say how useful it is with NNs*] [Convex Shape Prior for Multi-object Segmentation Using a Single Level Set Function](http://openaccess.thecvf.com/content_ICCV_2019/papers/Luo_Convex_Shape_Prior_for_Multi-Object_Segmentation_Using_a_Single_Level_ICCV_2019_paper.pdf)
 
 - [6/10] Dynamic Multi-scale Filters for Semantic Segmentation (very strange and suspicious layer which surprisingly improves accuracy)
 
