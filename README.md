@@ -151,16 +151,20 @@ I took a closer look on:
 
 - [10/10][Using pretrained GAN adapt for new classes and domains (even for 100 samples dataset) by training **only batch statistics**] [Image generation from small datasets via Batch Statistic Adaptation](http://openaccess.thecvf.com/content_ICCV_2019/papers/Noguchi_Image_Generation_From_Small_Datasets_via_Batch_Statistics_Adaptation_ICCV_2019_paper.pdf) With large pretrained generator (e.g. BigGAN) train only BatchNorm params (gamma and beta) and that's it - works even on very small datasets, results looks very good!
 
-## GAN Training Stability improvements
+### GAN Training Stability improvements
 
-- Wassershtein GAN with quadratic transport cost
+- [9/10][Increase of stability + SOTA GAN metrics; different term for WGAN to optimize quadratic wassershtein distance] [Wassershtein GAN with quadratic transport cost](http://openaccess.thecvf.com/content_ICCV_2019/papers/Liu_Wasserstein_GAN_With_Quadratic_Transport_Cost_ICCV_2019_paper.pdf)
 
-- Spectral regularization for combating mode collapse in GANs
+- [9/10][Spec-regularization >> spec-norm (in terms of both stability an final results)] [Spectral regularization for combating mode collapse in GANs](https://arxiv.org/abs/1908.10999)
 
-- Dance Dance Generation: Motion Transfer for Internet Videos
-- Everybody Dance Now (University of California)
+### Video synthesys
 
 - Markov decision process for video generation
+
+source person -> pose; target person + source pose -> synthesys
+- Dance Dance Generation: Motion Transfer for Internet Videos
+
+- Everybody Dance Now (University of California) [video](https://youtu.be/PCBTZh41Ris?t=158)
 
 ### Image extension
 
