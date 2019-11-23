@@ -41,6 +41,16 @@ I took a closer look on:
 
 - [8/10][Fast and efficient feature upsampling with very little overhead] [CARAFE: Content-Aware ReAssembly of FEatures](https://arxiv.org/abs/1905.02188)
 
+- LIP: Local Importance-based Pooling
+
+- Global Feature Guided Local Pooling
+
+- AttentionRNN: Structured Spatial Attention Mechanism
+
+- DSConv: Efficient Convolutional Operator
+
+- OctConv
+
 ## Semantic segmentation
 
 - [10/10][Non-uniform downsampling of high-resolution images] [Efficient segmentation: learning downsampling near semantic boundaries](https://arxiv.org/pdf/1907.07156.pdf). Network for creation of non-uniform downsampling grid aimed to increase space for semantic boundaries. The results are reasonably better than uniform downsampling. 3-steps: 1)non-uniform downsampling (image is downsampled to *very small* resulution (32x32 or 64x64 for example), on this resolution downsampling network is trained, ground truth are derived from a reasonable optimization problem on ground truth segmentation map) == very fast stage 2)main segmentation network runs on non-uniform downsampled image 3)the result is upsampled (which can be done as we know downsampling strategy)
@@ -123,7 +133,6 @@ I took a closer look on:
 
 - Controllable artistic text style transfer via shape-matching GAN
 
-
 ## Content generation, generative models, GANs, style transfer
 
 - [10/10 BEST PAPER ICCV2019] SinGAN: Learning a Generative Model from a Single Natural Image [video](https://www.youtube.com/watch?v=Xc9Rkbg6IZA). Use generators and discriminators on multiple resolutions and train on single image patches. Multiple applications without additional training including super resolution, image editing, single image animation, paint2image. Code available.
@@ -132,11 +141,55 @@ I took a closer look on:
 
 - [8/10] FUNIT: Few-shot Unsupervised Image-to-Image translation
 
+- Lifelong GAN: Continual learning for Conditional Image Generation
+
+- PuppetGAN: Cross-domain Image Manipulation by Demonstration
+
+- S2GAN: Sharing Aging Factors Across Ages and Sharing Aging Trends Among Individuals
+- sc-fegan: face editing generative adversarial network with user's sketch and color
+
+- Image generation from small datasets via Batch Statistic Adaptation
+
+- Wassershtein GAN with quadratic transport cost
+- InGAN: Capturing and Retargeting the "DNA" of a Natural Image
+- Spectral regularization for combating mode collapse in GANs
+
 - Dance Dance Generation: Motion Transfer for Internet Videos
+- Everybody Dance Now (University of California)
 
 - Markov decision process for video generation
 
+### Image extension
+
+- Boundless: Generative Adversarial Network for Image Extension
+
+- Very Long Natural Scenary Image Prediction by Outpaining
+
+### Style transfer
+
+- Photorealistic style transfer via Wavelet Transforms
+
+- A closed-form solution to universal style transfer
+
+- Understanding whitening and coloring transform for universal style transfer
+
 - [5/10] [Style transfer on entire image + semantic segmentation masks = style transfer for selected object classes] [Class-based styling: real-time localized style transfer with semantic segmentation](https://arxiv.org/abs/1908.11525)
+
+### Fashion, clothes try-on
+
+- FW-GAN (Flow navigated warping gan for video virtual try-on)
+
+- Personalized Fashion Design (Cong Yu et al)
+
+## Neural Architecture Search
+
+- randomly wired nets
+
+- AM-LFS: AutoML for Loss Function Search
+
+- AutoGAN: Neural architecture search for generative adversarial networks
+
+- One-Shot Neural Architecture Search via Self-Evaluated Template Network
 
 ## Compression
 
@@ -146,6 +199,8 @@ compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depe
 - [6/10][Yolo compression success story, known techniques applied properly] SlimYOLOv3: narrower faster and better for real-time
 
 - Accelerate CNN via Recursive Bayesian Pruning
+
+- adaptive inference cost with convolutional neural mixture models
 
 - [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
@@ -212,39 +267,32 @@ Sportlight speedrun
 
 ## TODO
 
-- FW-GAN (Flow navigated warping gan for video virtual try-on)
-
 - ~~Learning lightweighted LANE Detection CNNs by self-attention distilation~~
-
-- Lifelong GAN: Continual learning for Conditional Image Generation
-
-- Image generation from small datasets via Batch Statistic Adaptation
-
-- randomly wired nets
-
-- S4L
 
 - continual learning by asymmetric loss approximation with single-side overestimation
 
+### Sounds
 - the sound of motions
+- recursive visual sound separation using minus-plus net
+
+### Imbalanced classes
+- Gaussian margin for max-margin class imbalanced learning
 
 - generative adversarial minority oversampling
 
-- sc-fegan: face editing generative adversarial network with user's sketch and color
 
-- adaptive inference cost with convolutional neural mixture models
-
-- recursive visual sound separation using minus-plus net
-
-- LIP: Local Importance-based Pooling
-
-- Global Feature Guided Local Pooling
 
 - Local Relation Networks for Image Recognition
 
-- AttentionRNN: Structured Spatial Attention Mechanism
 
+### Knowledge distillation
 - Be Your Own Teacher: Improve the performance of CNN via Self-distillation
+
+- On the Efficacy of Knowledge Distillation
+
+### Self-supervised
+- Scaling and benchmarking self-supervised visual representation learning
+- S4L
 
 
 
@@ -252,41 +300,15 @@ Sportlight speedrun
 
 - Noise flow: noise modeling with conditional normalizing flows
 
-- Seeing Motion in the dark
-
-
-
-- Understanding whitening and coloring transform for universal style transfer
-
-- Wassershtein GAN with quadratic transport cost
-- InGAN: Capturing and Retargeting the "DNA" of a Natural Image
-- Spectral regularization for combating mode collapse in GANs
-
 - Rethinging Imagenet Pre-training
 
-- DSConv: Efficient Convolutional Operator
+
 
 - Deep Self-learning From Noisy Labels
-
-- Everybody Dance Now (University of California)
-
-- Seeing what a GAN cannot generate
-
-- On the Efficacy of Knowledge Distillation
-
-- Scaling and benchmarking self-supervised visual representation learning
-
-- Gaussian margin for max-margin class imbalanced learning
 
 - Selective Sparse Sampling for Fine-Grained Image Recognition
 
 - ~~Dynamic anchor feature selection for single shot object detection~~
-
-
-
-- Learning to see moving objects in the dark
-
-
 
 - VideoBERT: A Joint model for Video and Language Representation Learning
 
@@ -304,17 +326,15 @@ Sportlight speedrun
 
 - fooling network interpretation in image classification
 
+- Seeing what a GAN cannot generate
 
 
-- PuppetGAN: Cross-domain Image Manipulation by Demonstration
-
-- S2GAN: Sharing Aging Factors Across Ages and Sharing Aging Trends Among Individuals
 
 - Deep Meta Metric Learning
 
 - [slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
 
-- Transductive Learning for Zero-shot Object Detection
+- ~~Transductive Learning for Zero-shot Object Detection~~
 
 
 
@@ -326,24 +346,6 @@ Sportlight speedrun
 
 - Improving CNN Classifiers by Estimating Test-time Priors
 
-## Neural Architecture Search
-
-- AM-LFS: AutoML for Loss Function Search
-
-- AutoGAN: Neural architecture search for generative adversarial networks
-
-- One-Shot Neural Architecture Search via Self-Evaluated Template Network
-
-### Style transfer
-
-- Photorealistic style transfer via Wavelet Transforms
-
-- A closed-form solution to universal style transfer
-
-### Fashion, clothes try-on
-
-- Personalized Fashion Design (Cong Yu et al)
-
 ### Clustering
 
 - Subspace structure-aware spectral clustering for robust subspace clustering
@@ -354,17 +356,16 @@ Sportlight speedrun
 
 - Deep Comprehensive Maining for Image Clustering
 
-### Image extension (GANs)
-
-- Boundless: Generative Adversarial Network for Image Extension
-
-- Very Long Natural Scenary Image Prediction by Outpaining
-
 ### Human unsertainty for training
 
 - Human unsertainty makes classification more robust
 
 - (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
+
+### Motion in the dark
+
+- Seeing Motion in the dark
+- Learning to see moving objects in the dark
 
 ### Other (random)
 
