@@ -133,23 +133,28 @@ I took a closer look on:
 
 ## Content generation, generative models, GANs, style transfer
 
-- [10/10 BEST PAPER ICCV2019] SinGAN: Learning a Generative Model from a Single Natural Image [video](https://www.youtube.com/watch?v=Xc9Rkbg6IZA). Use generators and discriminators on multiple resolutions and train on single image patches. Multiple applications without additional training including super resolution, image editing, single image animation, paint2image. Code available.
+- [10/10 BEST PAPER ICCV2019] [SinGAN: Learning a Generative Model from a Single Natural Image](https://arxiv.org/abs/1905.01164) Use generators and discriminators on multiple resolutions and train on single image patches. Multiple applications without additional training including super resolution, image editing, single image animation, paint2image. [video](https://www.youtube.com/watch?v=Xc9Rkbg6IZA)
 
-- [6/10] Once a MAN: Towards Multi-target attack via learning multi-target adversarial network once. **TL;DR** Single model to produce adversarial examples towords any class (surprisingly, all the previous works use one model for one class, in this work - one work for all classes)
+- [8/10][InGAN: Capturing and Retargeting the "DNA" of a Natural Image](http://www.wisdom.weizmann.ac.il/~vision/ingan/resources/ingan.pdf) GAN trained on patches of a single image and able to produce similar images of different shapes.
 
-- [8/10] FUNIT: Few-shot Unsupervised Image-to-Image translation
+- [6/10][Single net adversarial attack for multiple target classes] [Once a MAN: Towards Multi-target attack via learning multi-target adversarial network once](https://arxiv.org/abs/1908.05185). Single model to produce adversarial examples towords any class (surprisingly, all the previous works use one model for one class, in this work - one work for all classes)
 
-- Lifelong GAN: Continual learning for Conditional Image Generation
+- [8/10][FUNIT: Few-shot Unsupervised Image-to-Image translation](http://openaccess.thecvf.com/content_ICCV_2019/papers/Liu_Few-Shot_Unsupervised_Image-to-Image_Translation_ICCV_2019_paper.pdf)
 
-- PuppetGAN: Cross-domain Image Manipulation by Demonstration
+- [7/10][Lifelong GAN: Continual learning for Conditional Image Generation](https://arxiv.org/abs/1907.10107) With access to previous models and new data the task is to be able to produce both new and old classes. 
 
-- S2GAN: Sharing Aging Factors Across Ages and Sharing Aging Trends Among Individuals
-- sc-fegan: face editing generative adversarial network with user's sketch and color
+- [8/10][PuppetGAN: Cross-domain Image Manipulation by Demonstration](http://openaccess.thecvf.com/content_ICCV_2019/papers/Usman_PuppetGAN_Cross-Domain_Image_Manipulation_by_Demonstration_ICCV_2019_paper.pdf) Manipulate separate attributes of an image (e.g. mouth, rotation, lightning, etc) from target image
 
-- Image generation from small datasets via Batch Statistic Adaptation
+- [7/10][Couple of tricks to make "aging" more personalized] [S2GAN: Sharing Aging Factors Across Ages and Sharing Aging Trends Among Individuals](http://openaccess.thecvf.com/content_ICCV_2019/papers/He_S2GAN_Share_Aging_Factors_Across_Ages_and_Share_Aging_Trends_ICCV_2019_paper.pdf)
+
+- [7/10][User edits image a little in sketch in certain place -> realistic edited image] [sc-fegan: face editing generative adversarial network with user's sketch and color](https://arxiv.org/pdf/1902.06838.pdf)
+
+- [10/10][Using pretrained GAN adapt for new classes and domains (even for 100 samples dataset) by training **only batch statistics**] [Image generation from small datasets via Batch Statistic Adaptation](http://openaccess.thecvf.com/content_ICCV_2019/papers/Noguchi_Image_Generation_From_Small_Datasets_via_Batch_Statistics_Adaptation_ICCV_2019_paper.pdf) With large pretrained generator (e.g. BigGAN) train only BatchNorm params (gamma and beta) and that's it - works even on very small datasets, results looks very good!
+
+## GAN Training Stability improvements
 
 - Wassershtein GAN with quadratic transport cost
-- InGAN: Capturing and Retargeting the "DNA" of a Natural Image
+
 - Spectral regularization for combating mode collapse in GANs
 
 - Dance Dance Generation: Motion Transfer for Internet Videos
