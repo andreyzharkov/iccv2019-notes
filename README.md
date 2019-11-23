@@ -301,10 +301,6 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 
 ### Other (random)
 
-- [ransac-like to fit arbitraty shapes or arbitrary counts] Progressive-X: Efficient, Anytime, Multi-Model Fitting Algorithm
-
-- Noise flow: noise modeling with conditional normalizing flows
-
 - [8/10][Imagenet pretraining may improve convergence speed but do not necessary leads to better results; training from scratch is better] [Rethinging Imagenet Pre-training](https://arxiv.org/abs/1811.08883)
 
 - [9/10][Learn multiple prototypes per class to detect noisy labels; train on both noisy and pseudo labels; no need to clean data; no specific noise distribution assumptions; SOTA for noisy classification[Deep Self-learning From Noisy Labels](https://arxiv.org/pdf/1908.02160.pdf)
@@ -321,7 +317,7 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 
 - [9/10][Slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
 
-- Self-training with progressive augmentation for Unsupervised Person Re-identification
+- [6/10][*One of many works on domain adaptation*][Self-training with progressive augmentation for Unsupervised Person Re-identification](https://arxiv.org/abs/1907.13315)
 
 - Learning to paint with model-based deep reinforcement learning
 
@@ -330,6 +326,10 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 - Improving CNN Classifiers by Estimating Test-time Priors
 
 - Joint Acne Image Grading and Counting via Label Distribution Learning
+
+- [ransac-like to fit arbitraty shapes or arbitrary counts] Progressive-X: Efficient, Anytime, Multi-Model Fitting Algorithm
+
+- Noise flow: noise modeling with conditional normalizing flows
 
 - [comic colorization] Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss
 
@@ -340,5 +340,3 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 # Other notes:
 
 - Book "Explainable AI: Interpreting, explaining and visualizing deep learning"
-
-- Are dilated convolutions used in sequential modeling? cnns in general?
