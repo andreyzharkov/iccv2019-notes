@@ -65,6 +65,14 @@ I took a closer look on:
 
 - [8/10][Another approach for using boundary: first, learn boundary as N+1' class then introduce UAGs and some crazy staff] [Boundary-Aware Feature Propagation for Scene Segmentation](https://arxiv.org/pdf/1909.00179.pdf)
 
+### Salient object detection (note that everyone exploits edges & boundaries in some way)
+
+- EGNet: Edge Guidance Network for Salient Object Detection
+
+- Selectivity or Invariance: Boundary aware Salient Object Detection
+
+- Stacked Cross Refined Network for Edge-aware Salient Object Detection
+
 ### Other
 
 - [6/10][Detect unknown objects using optical flow] [Towards segmenting everything that moves](https://arxiv.org/abs/1902.03715)
@@ -83,17 +91,15 @@ I took a closer look on:
 
 - [7/10][Dense object detection by simply predicting bbox coordinates. Simple and efficient.] [FCOS: Fully Convolutional One-Stage Object Detection](https://arxiv.org/pdf/1904.01355.pdf) Directly predict 4D distances to object (top, left, bottom, right) in each foregroung pixel + NMS -> SOTA + simplisity + integration with depth prediction + no anchors computation (i.e. IoU) and anchor hyperparameters. Details: 1)each object is predicted on only one feature map (on training) and on testing in case of multiple resolutions alarmed for an object only the smallest is chosen; 2)propose "centerness" branch which predicts normalized ([0, 1]) distance between pixel and center, this branch is used in NMS multiplied by classification.
 
-- [6/10] [Global scale predicted in each resnet block, dilations are selected based on that] [POD: Practical object detection with scale-sensitive network](https://arxiv.org/pdf/1909.02225.pdf)
+- [6/10][Global scale predicted in each resnet block, dilations are selected based on that] [POD: Practical object detection with scale-sensitive network](https://arxiv.org/pdf/1909.02225.pdf)
 
-- [7/10] [Change of target - ~~bbox~~ reppoints - arbitrary points whose circumference locates object accurately] [RepPoints: Point set Representation for object detection](http://openaccess.thecvf.com/content_ICCV_2019/papers/Yang_RepPoints_Point_Set_Representation_for_Object_Detection_ICCV_2019_paper.pdf) These reppoint may be iteratively refined in prediction, they are learn by localization and classification losses.
+- [6/10][To improve detection of different scales objects replace some convs with 3 conv branches with same params but different dilations] [Scale-aware Trident Network for Object Detection](https://arxiv.org/pdf/1901.01892.pdf)
 
-- Generative Modelling for small data object detection
+- [7/10][Change of target - ~~bbox~~ reppoints - arbitrary points whose circumference locates object accurately] [RepPoints: Point set Representation for object detection](http://openaccess.thecvf.com/content_ICCV_2019/papers/Yang_RepPoints_Point_Set_Representation_for_Object_Detection_ICCV_2019_paper.pdf) These reppoint may be iteratively refined in prediction, they are learn by localization and classification losses.
 
-- Scale-aware Trident Network for Object Detection
+- [6/10][Cycle-gan (clean image<->image with pathology) on small regions specified by masks] [Generative Modelling for small data object detection](https://arxiv.org/pdf/1910.07169.pdf)
 
-- Stacked Cross Refined Network for Edge-aware Salient Object Detection
-
-- ThunderNet: Towards real time generic object detection on mobile device
+- [5/10][2-stage detector with smaller backbone - works close-to-realtime on GPU][ThunderNet: Towards real time generic object detection on mobile device](https://arxiv.org/pdf/1903.11752.pdf)
 
 ## Text detection and recognition
 
@@ -327,12 +333,6 @@ Sportlight speedrun
 - AutoGAN: Neural architecture search for generative adversarial networks
 
 - One-Shot Neural Architecture Search via Self-Evaluated Template Network
-
-### Salient object detection
-
-- EGNet: Edge Guidance Network for Salient Object Detection
-
-- Selectivity or Invariance: Boundary aware Salient Object Detection
 
 ### Style transfer
 
