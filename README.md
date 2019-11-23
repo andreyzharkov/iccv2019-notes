@@ -198,7 +198,7 @@ source person -> pose; target person + source pose -> synthesys
 
 ### Fashion, clothes try-on
 
-In general all these methods still work quite poorly, but they work somehow
+*In general all these methods still work quite poorly, but at least somehow*
 
 - FW-GAN (Flow navigated warping gan for video virtual try-on)
 
@@ -295,42 +295,24 @@ Sportlight speedrun
 ## Other small topics
 
 ### Sounds
-- the sound of motions
-- recursive visual sound separation using minus-plus net
+- [visual sound localization and separation] [the sound of motions](https://arxiv.org/abs/1904.05979)
+- [sound separation by predicting M mixture components, then substracting one-by-one their masks, then refining separate sounds] [recursive visual sound separation using minus-plus net](http://openaccess.thecvf.com/content_ICCV_2019/papers/Xu_Recursive_Visual_Sound_Separation_Using_Minus-Plus_Net_ICCV_2019_paper.pdf)
 
 ### Imbalanced classes
-- Gaussian margin for max-margin class imbalanced learning
+- [9/10][Loss for classification+clustering specifically for imbalanced clustering; good separation of embeddings in the vector space] [Gaussian margin for max-margin class imbalanced learning](https://arxiv.org/pdf/1901.07711.pdf)
 
-- generative adversarial minority oversampling
+- [7/10][3-player adversarial game between a convex generator, a multi-class classifier network, and a real/fake discriminator to perform oversampling in deep learning systems. The convex generator generates new samples from
+the minority classes as convex combinations of existing instances, aiming to fool both the discriminator as well as the
+classifier into misclassifying the generated samples] [generative adversarial minority oversampling](http://openaccess.thecvf.com/content_ICCV_2019/papers/Mullick_Generative_Adversarial_Minority_Oversampling_ICCV_2019_paper.pdf)
 
 ### Knowledge distillation
-- Be Your Own Teacher: Improve the performance of CNN via Self-distillation
+- [9/10][Amazing! Aux intermediate classifiers are revived and distillation among them improves quality by 0.8-4%] [Be Your Own Teacher: Improve the performance of CNN via Self-distillation](https://arxiv.org/pdf/1905.08094.pdf)
 
-- On the Efficacy of Knowledge Distillation
+- [8/10][More accurate networks are often worse teachers; the solution is to stop training of the teacher model early; results generalize among models and datasets] [On the Efficacy of Knowledge Distillation](https://arxiv.org/abs/1910.01348)
 
 ### Self-supervised
 - Scaling and benchmarking self-supervised visual representation learning
 - S4L
-
-
-
-- [ransac-like to fit arbitraty figures] Progressive-X: Efficient, Anytime, Multi-Model Fitting Algorithm
-
-- Noise flow: noise modeling with conditional normalizing flows
-
-- Rethinging Imagenet Pre-training
-
-
-
-- Deep Self-learning From Noisy Labels
-
-- Selective Sparse Sampling for Fine-Grained Image Recognition
-
-- ~~Dynamic anchor feature selection for single shot object detection~~
-
-- VideoBERT: A Joint model for Video and Language Representation Learning
-
-- PR Product: A substitute for inner product in neural networks
 
 ### Losses
 
@@ -347,20 +329,6 @@ Sportlight speedrun
 - fooling network interpretation in image classification
 
 - Seeing what a GAN cannot generate
-
-
-
-- Deep Meta Metric Learning
-
-- [9/10][Slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
-
-- Self-training with progressive augmentation for Unsupervised Person Re-identification
-
-- Learning to paint with model-based deep reinforcement learning
-
-- Joint Demosaicing and Denoising by Fine-tuning of Bursts of Raw Images
-
-- Improving CNN Classifiers by Estimating Test-time Priors
 
 ### Clustering
 
@@ -384,6 +352,34 @@ Sportlight speedrun
 - Learning to see moving objects in the dark
 
 ### Other (random)
+
+- [ransac-like to fit arbitraty shapes or arbitrary counts] Progressive-X: Efficient, Anytime, Multi-Model Fitting Algorithm
+
+- Noise flow: noise modeling with conditional normalizing flows
+
+- Rethinging Imagenet Pre-training
+
+- Deep Self-learning From Noisy Labels
+
+- Selective Sparse Sampling for Fine-Grained Image Recognition
+
+- ~~Dynamic anchor feature selection for single shot object detection~~
+
+- VideoBERT: A Joint model for Video and Language Representation Learning
+
+- PR Product: A substitute for inner product in neural networks
+
+- Deep Meta Metric Learning
+
+- [9/10][Slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
+
+- Self-training with progressive augmentation for Unsupervised Person Re-identification
+
+- Learning to paint with model-based deep reinforcement learning
+
+- Joint Demosaicing and Denoising by Fine-tuning of Bursts of Raw Images
+
+- Improving CNN Classifiers by Estimating Test-time Priors
 
 - Joint Acne Image Grading and Counting via Label Distribution Learning
 
