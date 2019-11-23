@@ -37,15 +37,25 @@ I took a closer look on:
 
 ## Modules
 
+### Conv-replacements
+
 - [10/10][OctConv is both faster and more accurate; drop-in replacement for vanilla conv] [Drop an Octave: Reducing Spatial Redundancy in Convolutional Neural Networks with Octave Convolution](https://arxiv.org/abs/1904.05049). *The trick is that the final architecture have to be optimized (in terms of framework matrix operations) otherwise it will be actially **slower**. Gives up to 30% speed up with better accuracy*. The idea of the paper is to explicitly decompose features into high-frequent (H, W, C_h) and low-frequent (H // octave, W // octave, C_l) and process them separately than exchange the information.
 
 - [9/10][Suspicious layer which surprisingly improves both accuracy and speed and is a drop-in replacement for vanilla convolution] [Dynamic Multi-scale Filters for Semantic Segmentation](http://openaccess.thecvf.com/content_ICCV_2019/papers/He_Dynamic_Multi-Scale_Filters_for_Semantic_Segmentation_ICCV_2019_paper.pdf) Replace vanilla conv with the following 2-branch structure: the first branch computes KxK kernel via adaptive_pool(KxK) -> conv1x1; the second branch applies 1x1 conv to features; then 2 branches merge via depthwise conv **with kernel computed from the first branch** and after that additional 1x1 conv. Ablation study shows that it can give +7% mIoU compared to vanilla conv. Now why it's suspicious? The computed kernel's top left element is essentially taken from image top left part, and the same for bottom right kernel element (it's essentially image bottom right part). And this **very different** elements are applied to very similar local features. My intuition fails to explain why it make sense, maybe we have to add additional global pooling for the kernel and firstly convolve kernel with it.
 
-- [8/10][Fast and efficient feature upsampling with very little overhead] [CARAFE: Content-Aware ReAssembly of FEatures](https://arxiv.org/abs/1905.02188)
+- [6/10][Essentially local self-attention with inefficient (not optimized) computation] [Local Relation Networks for Image Recognition](https://arxiv.org/pdf/1904.11491.pdf)
+
+### Pooling variations
 
 - [4/10][Learned pooling works slightly better but slower] [LIP: Local Importance-based Pooling](https://arxiv.org/pdf/1908.04156.pdf)
 
 - [4/10][Learned pooling with global features; slightly better but slower] [Global Feature Guided Local Pooling](http://openaccess.thecvf.com/content_ICCV_2019/papers/Kobayashi_Global_Feature_Guided_Local_Pooling_ICCV_2019_paper.pdf)
+
+### Multi-scale Feature aggregation
+
+- [8/10][Fast and efficient feature upsampling with very little overhead] [CARAFE: Content-Aware ReAssembly of FEatures](https://arxiv.org/abs/1905.02188)
+
+### Attention
 
 - [5/10][Local visual attention in the autoregressive models order] [AttentionRNN: Structured Spatial Attention Mechanism](https://arxiv.org/pdf/1905.09400.pdf)
 
@@ -292,11 +302,6 @@ Sportlight speedrun
 - Gaussian margin for max-margin class imbalanced learning
 
 - generative adversarial minority oversampling
-
-
-
-- [Local Relation Networks for Image Recognition]()
-
 
 ### Knowledge distillation
 - Be Your Own Teacher: Improve the performance of CNN via Self-distillation
