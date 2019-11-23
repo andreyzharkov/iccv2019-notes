@@ -334,9 +334,9 @@ Sportlight speedrun
 
 ### Losses
 
-- Anchor Loss: Modulating Loss Scale Based on Prediction
+- [9/10][Dynamic cross-entropy smoothing; very simple to implement and seem to work slightly better than OHEM, Central Loss and others][Anchor Loss: Modulating Loss Scale Based on Prediction](https://arxiv.org/pdf/1909.11155.pdf)
 
-- SoftTripletLoss: Deep metric learning without triplet sampling
+- [8/10][Softmax with multiple centers per class > TripletLoss (no need to sample triplets and better results); prof that smoothed softmax loss minimization == soft triplet loss minimization, so it's easier to optimize the first one as it does not require sampling] [SoftTripletLoss: Deep metric learning without triplet sampling](http://openaccess.thecvf.com/content_ICCV_2019/papers/Qian_SoftTriple_Loss_Deep_Metric_Learning_Without_Triplet_Sampling_ICCV_2019_paper.pdf)
 
 - [6/10][single side loss function overestimation] [continual learning by asymmetric loss approximation with single-side overestimation](https://arxiv.org/abs/1908.02984)
 
