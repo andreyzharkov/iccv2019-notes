@@ -159,6 +159,8 @@ I took a closer look on:
 
 ### Video synthesys
 
+- [9/10] Few-Shot Adversarial Learning of Realistic Neural Talking Head Models [video](https://youtu.be/P2uZF-5F1wI)
+
 - Markov decision process for video generation
 
 source person -> pose; target person + source pose -> synthesys
@@ -168,13 +170,15 @@ source person -> pose; target person + source pose -> synthesys
 
 ### Image extension
 
+(also SinGAN and InGAN)
+
 - Boundless: Generative Adversarial Network for Image Extension
 
 - Very Long Natural Scenary Image Prediction by Outpaining
 
 ### Style transfer
 
-- Photorealistic style transfer via Wavelet Transforms
+- [examples **really looks** like simple color transform] Photorealistic style transfer via Wavelet Transforms
 
 - A closed-form solution to universal style transfer
 
@@ -184,19 +188,21 @@ source person -> pose; target person + source pose -> synthesys
 
 ### Fashion, clothes try-on
 
+In general all these methods still work quite poorly, but they work somehow
+
 - FW-GAN (Flow navigated warping gan for video virtual try-on)
 
 - Personalized Fashion Design (Cong Yu et al)
 
 ## Neural Architecture Search
 
-- randomly wired nets
+- [9/10][Sampling from random graph model gives results compared with current SOTA-NAS, which means that all that the current NAS do is not really better than random search] [Exploring Randomly Wired Neural Networks for Image Recognition](https://arxiv.org/abs/1904.01569)
 
-- AM-LFS: AutoML for Loss Function Search
+- [8/10][Most of classification loss functions can be represented from parametrized loss function with 2 params, authors tried to find the optimal for these params][AM-LFS: AutoML for Loss Function Search](https://arxiv.org/pdf/1905.07375.pdf)
 
-- AutoGAN: Neural architecture search for generative adversarial networks
+- [9/10][Have improvements vs handcrafted GANs on Cifar10 in terms of IS] [AutoGAN: Neural architecture search for generative adversarial networks](https://arxiv.org/pdf/1908.03835.pdf)
 
-- One-Shot Neural Architecture Search via Self-Evaluated Template Network
+- [8/10][Evaluator which predicts how likely model will have lower validation score] [One-Shot Neural Architecture Search via Self-Evaluated Template Network](https://arxiv.org/abs/1910.05733)
 
 ## Compression
 
@@ -211,7 +217,7 @@ compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depe
 
 - Accelerate CNN via Recursive Bayesian Pruning
 
-- adaptive inference cost with convolutional neural mixture models
+- [6/10][Speed-quality tradeoff without retraining; but the results are worse than SOTA] [adaptive inference cost with convolutional neural mixture models](https://arxiv.org/pdf/1908.06694.pdf) The idea is to work with mixture of nets (each layer may be applied or not applied). Inference cost is O(N*(N-1)/2)) where N is number of layers - which is relatively slow. In pruning we omit some layers thus having some speedup. The main benefit is that net does not need to be retrained, but the approach seems complicated to implement and works worse in quality compared to SOTA.
 
 - [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
