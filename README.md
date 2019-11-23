@@ -200,9 +200,9 @@ In general all these methods still work quite poorly, but they work somehow
 
 - [8/10][Most of classification loss functions can be represented from parametrized loss function with 2 params, authors tried to find the optimal for these params][AM-LFS: AutoML for Loss Function Search](https://arxiv.org/pdf/1905.07375.pdf)
 
-- [9/10][Have improvements vs handcrafted GANs on Cifar10 in terms of IS] [AutoGAN: Neural architecture search for generative adversarial networks](https://arxiv.org/pdf/1908.03835.pdf)
+- [9/10][Improvements vs handcrafted GANs on Cifar10 in terms of IS] [AutoGAN: Neural architecture search for generative adversarial networks](https://arxiv.org/pdf/1908.03835.pdf)
 
-- [8/10][Evaluator which predicts how likely model will have lower validation score] [One-Shot Neural Architecture Search via Self-Evaluated Template Network](https://arxiv.org/abs/1910.05733)
+- [8/10][Evaluator predicts how likely model will have lower validation score] [One-Shot Neural Architecture Search via Self-Evaluated Template Network](https://arxiv.org/abs/1910.05733)
 
 ## Compression
 
@@ -219,13 +219,13 @@ compression and fine-tuning, 10-15x compression rate with 1-2% metric drop (depe
 
 - [6/10][Speed-quality tradeoff without retraining; but the results are worse than SOTA] [adaptive inference cost with convolutional neural mixture models](https://arxiv.org/pdf/1908.06694.pdf) The idea is to work with mixture of nets (each layer may be applied or not applied). Inference cost is O(N*(N-1)/2)) where N is number of layers - which is relatively slow. In pruning we omit some layers thus having some speedup. The main benefit is that net does not need to be retrained, but the approach seems complicated to implement and works worse in quality compared to SOTA.
 
-- [??? TODO] [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
+- [Workshop: Compact and Efficient Feature Representation and Learning in Computer Vision 2019](http://www.ee.oulu.fi/~lili/CEFRLatICCV2019.html)
 
 ## Anomaly detection
 
 - Real time aerial suspicious analysis (asana): system for identification and re-identification of suspicious individuals in crowds using the bayesian scatter-net hybrid network
 
-- Detecting the unexpected by image resynthesis (anomaly detection)
+- Detecting the unexpected by image resynthesis
 
 - memorizing normality to detect anomaly: memory-augmented deep autoencoder for unsupervised anomaly detection
 
@@ -282,11 +282,7 @@ Sportlight speedrun
 -decompose gans according to physics (e.g. background + foreground). in general image = shape + textures + lightning
 -correlation in gans between objects and activations in some neurons (turning on/off some neuron activation we can edit produced images). correlation can be found automaticly, David Bau
 
-## TODO
-
-- ~~Learning lightweighted LANE Detection CNNs by self-attention distilation~~
-
-- continual learning by asymmetric loss approximation with single-side overestimation
+## Other small topics
 
 ### Sounds
 - the sound of motions
@@ -299,7 +295,7 @@ Sportlight speedrun
 
 
 
-- Local Relation Networks for Image Recognition
+- [Local Relation Networks for Image Recognition]()
 
 
 ### Knowledge distillation
@@ -337,6 +333,8 @@ Sportlight speedrun
 
 - SoftTripletLoss: Deep metric learning without triplet sampling
 
+- [6/10][single side loss function overestimation] [continual learning by asymmetric loss approximation with single-side overestimation](https://arxiv.org/abs/1908.02984)
+
 ### Interpretability
 
 - Explaining Neural Networks Semantically and Qualitatively
@@ -349,11 +347,7 @@ Sportlight speedrun
 
 - Deep Meta Metric Learning
 
-- [slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
-
-- ~~Transductive Learning for Zero-shot Object Detection~~
-
-
+- [9/10][Slow net on 1/N frames, fast net on (N-1)/N frames] Slow-Fast Networks for Video Recognition
 
 - Self-training with progressive augmentation for Unsupervised Person Re-identification
 
@@ -375,9 +369,9 @@ Sportlight speedrun
 
 ### Human unsertainty for training
 
-- Human unsertainty makes classification more robust
+- [9/10][Human unsertainty for classification (0.6 dog, 0.4 cat), works better than no-human smoothing methods, such as label smoothing] [Human unsertainty makes classification more robust](https://arxiv.org/abs/1908.07086)
 
-- (force machines look same regions as humans helps, but the annotation cost?) Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded
+- [5/10][Force machines look same regions as humans helps, but the annotation cost?] [Taking a HINT: Leveraging Explanations to Make Vision and Language Models More Grounded](https://arxiv.org/abs/1902.03751)
 
 ### Motion in the dark
 
@@ -389,6 +383,10 @@ Sportlight speedrun
 - Joint Acne Image Grading and Counting via Label Distribution Learning
 
 - [comic colorization] Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss
+
+- ~~Learning lightweighted LANE Detection CNNs by self-attention distilation~~
+
+- ~~Transductive Learning for Zero-shot Object Detection~~
 
 # Other notes:
 
