@@ -311,8 +311,9 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 - [8/10][More accurate networks are often worse teachers; the solution is to stop training of the teacher model early; results generalize among models and datasets] [On the Efficacy of Knowledge Distillation](https://arxiv.org/abs/1910.01348)
 
 ### Self-supervised
-- Scaling and benchmarking self-supervised visual representation learning
-- S4L
+- [10/10][**Self-supervised pretraining > Imagenet pretraining**; comprehensive benchmarking self-supervised approaches on different datasets][Scaling and benchmarking self-supervised visual representation learning](https://arxiv.org/pdf/1905.01235.pdf)
+- [9/10][SOTA on semi-supervised][S4L: Self-Supervised Semi-Supervised Learning](http://openaccess.thecvf.com/content_ICCV_2019/papers/Zhai_S4L_Self-Supervised_Semi-Supervised_Learning_ICCV_2019_paper.pdf)
+
 
 ### Losses
 
@@ -357,9 +358,9 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 
 - Noise flow: noise modeling with conditional normalizing flows
 
-- Rethinging Imagenet Pre-training
+- [8/10][Imagenet pretraining may improve convergence speed but do not necessary leads to better results; training from scratch is better] [Rethinging Imagenet Pre-training](https://arxiv.org/abs/1811.08883)
 
-- Deep Self-learning From Noisy Labels
+- [9/10][Learn multiple prototypes per class to detect noisy labels; train on both noisy and pseudo labels; no need to clean data; no specific noise distribution assumptions; SOTA for noisy classification[Deep Self-learning From Noisy Labels](https://arxiv.org/pdf/1908.02160.pdf)
 
 - Selective Sparse Sampling for Fine-Grained Image Recognition
 
