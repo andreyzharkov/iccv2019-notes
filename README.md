@@ -1,5 +1,4 @@
 # iccv2019-notes
-personal notes from iccv2019
 
 **Disclaimer: this is a personal perspective, I could miss a lot of things and could not promise that there are no mistakes.** 
 
