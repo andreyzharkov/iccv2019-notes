@@ -1,6 +1,10 @@
 # iccv2019-notes
 personal notes from iccv2019
 
+**Disclaimer: this is a personal perspective, I could miss a lot of things and could not promise that there are no mistakes.** 
+
+The marks for papers [?/10] again are totally subjective and based on their usability for me. Approximate translation from these marks is >=9 - must read; >=6 - must read if you are working in the specified area. If the paper title is ~~crossed~~ these means I decided not to go into this (despite I was interested during main conference, the reason may be that the area is very far from my current interests), if the paper goes without comments it means that I will probably add them later
+
 ## Intro
 
 Over 7,500 participants, 4 days of main conference + 60 workshops and 12 tutorials.
@@ -27,13 +31,31 @@ I took a closer look on:
 - Network compression
 - GANs, style transfer
 
+## TL;DR - detected trends and advancements
+
+- **Avoid imagenet pretraining** for transfer learning. **Self-supervised techniques seem to work better**. It seems (and is shown in several papers) that it is probably much better to train from scratch on your data, pretrained weights initialization may decrease convergence speed but do not guarantee that final metrics will be better. Instead of training from scratch you can also try to combine your training with **self-supervised** methods.
+
+- **Efficient layers instead of convolutions**. Several layers proposed to be used as drop-in replacements of vanilla convolutions. The most notable example is probably OctConv. The problem with such new layers is that vanilla convolution has highly optimized implementations, which is not true for this new proposed layers even if they require less computation in theory.
+
+- **Efficient loss functions**. Several new loss functions were proposed instead of CE and it seems that they should be a default choice now as they are easy to implement and outperform Center Loss or OHEM strategies and sometimes provide more clear class separation in the embedding space and even work well for imbalanced classification. See *Losses* section for details.
+
+- **Going from anchor-based object detection to dense predictions**. Several papers propose to go from anchor-based detectors to dense predictions, see *Instance Segmentation* and *Object Detection* sections below for more details
+
+- **Generative models from single image**. This includes better deepfakes, neural talking heads and GANs on single image (SinGAN and InGAN).
+
+- **Revival of auxiliary intermediate classifiers**. I especially liked [this paper](https://arxiv.org/pdf/1905.08094.pdf) where authors apply distillation between final classifier and intermediate classifiers and these improved results *a lot*.
+
+- **Attemps for fashion generation and try-on**. A lot of works in this field but they do not really work for now, however it is just a matter of time.
+
+# Papers by topic
+
 ## Augmentation
 
 - [7/10][They are independant] [Are adversarial robustness and common perturbation robustness independant attibutes](https://arxiv.org/abs/1909.02436)
 
-- CutMix: Regularizing Strategy to Train Strong Classifiers with Localizable Features
+- [8/10][Crop one image and paste into another + mix ground truth label proportionally to the area] [CutMix: Regularizing Strategy to Train Strong Classifiers with Localizable Features](https://arxiv.org/abs/1905.04899) SOTA augmentation strategy, also improve transfer learning
 
-- Online Hyper-parameter Learning for Auto-Augmentation Strategy
+- [7/10][Find best augmentation policy along with network training] [Online Hyper-parameter Learning for Auto-Augmentation Strategy](https://arxiv.org/pdf/1905.07373.pdf) Gives slight improvements in quality, but in fact less efficient in terms of time for search than [this](https://arxiv.org/abs/1905.05393)
 
 ## Modules
 
@@ -52,6 +74,8 @@ I took a closer look on:
 - [4/10][Learned pooling with global features; slightly better but slower] [Global Feature Guided Local Pooling](http://openaccess.thecvf.com/content_ICCV_2019/papers/Kobayashi_Global_Feature_Guided_Local_Pooling_ICCV_2019_paper.pdf)
 
 ### Multi-scale Feature aggregation
+
+- [9/10][SOTA on cityscapes-val, proposed global-local context module to aggregate multidimensional features] [Adaptive Context Network for Scene Parsing](https://arxiv.org/pdf/1911.01664.pdf)
 
 - [8/10][Fast and efficient feature upsampling with very little overhead] [CARAFE: Content-Aware ReAssembly of FEatures](https://arxiv.org/abs/1905.02188)
 
@@ -304,6 +328,8 @@ classifier into misclassifying the generated samples] [generative adversarial mi
 - [8/10][Imagenet pretraining may improve convergence speed but do not necessary leads to better results; training from scratch is better] [Rethinging Imagenet Pre-training](https://arxiv.org/abs/1811.08883)
 
 - [9/10][Learn multiple prototypes per class to detect noisy labels; train on both noisy and pseudo labels; no need to clean data; no specific noise distribution assumptions; SOTA for noisy classification[Deep Self-learning From Noisy Labels](https://arxiv.org/pdf/1908.02160.pdf)
+
+- [9/10][Fast second order optimizer (cost of backward ~ 2-3 \* costs of forward)] [Small steps and giant leaps: Minimal Newton solvers for Deep Learning](https://arxiv.org/abs/1805.08095) Converges better than Adam, SGD & co
 
 - Selective Sparse Sampling for Fine-Grained Image Recognition
 
