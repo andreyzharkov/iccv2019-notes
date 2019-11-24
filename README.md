@@ -10,6 +10,8 @@ The marks for papers [?/10] again are totally subjective and based on their usab
 Over 7,500 participants, 4 days of main conference + 60 workshops and 12 tutorials.
 1075 accepted papers (10% orals) on the main conference alone.
 
+All of the papers can be found [at CVF open access](http://openaccess.thecvf.com/menu.py). The official videos from oral session will be available [at CVF youtube channel](https://www.youtube.com/channel/UC0n76gicaarsN_Y9YShWwhw)
+
 It was absolutely infeasible to track everything so I almost completely skipped the following topics
 - Autonomous driving
 - 3D, Point clouds
@@ -46,6 +48,8 @@ I took a closer look on:
 - **Revival of auxiliary intermediate classifiers**. I especially liked [this paper](https://arxiv.org/pdf/1905.08094.pdf) where authors apply distillation between final classifier and intermediate classifiers and these improved results *a lot*.
 
 - **Attemps for fashion generation and try-on**. A lot of works in this field but they do not really work for now, however it is just a matter of time.
+
+- **Preregistration Workshop**. The current scheme for ML Conferences is not how science normally works: you have a hypothesys, than provide experiments to prove/disprove it, but in ML Papers the pipeline is the opposite: having the results you hypothesyze to explain them which is known as HARKing (Hypothesyzing after the results are known). The consequence of this is high positive bias, SOTA-hacking (the paper is much more likely accepted if it claims to beat SOTA) and more importantly poor generalization of the results (say, you conducted experiments on 10 classification datasets and recieve SOTA on 3 of them; you publish a paper with these 3 and complitely omit 7 which is absolutely terrible to the science). The idea of preregistration is for fighting this problem and separate hypothesys generation and hypothesys validation. Looks very promising direction despite having lots of problems. **This is probably the most important idea I've heard of in the entire conference**. Preregistration workshop [link](https://preregister.vision/). Here is the link to the video which clearly explains the problem (I will post it when it will be available).
 
 # Papers by topic
 
